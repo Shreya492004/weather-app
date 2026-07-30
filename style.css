@@ -1,59 +1,201 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
 }
 
-body {
-  background: linear-gradient(135deg, #74ebd5, #9face6);
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(-45deg,#6dd5ed,#2193b0,#8e9eab,#74ebd5);
+    background-size:400% 400%;
+    animation:bgAnimation 12s ease infinite;
 }
 
-.container {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  width: 320px;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+/* Animated Background */
+@keyframes bgAnimation{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
-h2 {
-  margin-bottom: 15px;
-  color: #333;
+/* Floating Weather Card */
+.container{
+    width:350px;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.18);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.3);
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    text-align:center;
+    animation:float 4s ease-in-out infinite;
+    position:relative;
+    overflow:hidden;
 }
 
-.search-box {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+/* Shine Effect */
+.container::before{
+    content:"";
+    position:absolute;
+    top:-100%;
+    left:-60%;
+    width:50%;
+    height:300%;
+    background:rgba(255,255,255,.25);
+    transform:rotate(25deg);
+    animation:shine 5s linear infinite;
 }
 
-input {
-  width: 70%;
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+@keyframes shine{
+    0%{
+        left:-60%;
+    }
+    100%{
+        left:160%;
+    }
 }
 
-button {
-  width: 25%;
-  background: #6c63ff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+@keyframes float{
+    0%,100%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
 }
 
-button:hover {
-  background: #5848e5;
+h2{
+    color:white;
+    margin-bottom:20px;
+    font-size:28px;
+    font-weight:600;
+    text-shadow:0 2px 8px rgba(0,0,0,.2);
 }
 
-.weather-result {
-  font-size: 18px;
-  color: #444;
+/* Search Section */
+.search-box{
+    display:flex;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+input{
+    flex:1;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    outline:none;
+    background:rgba(255,255,255,.8);
+    transition:.4s;
+    font-size:15px;
+}
+
+input:focus{
+    transform:scale(1.05);
+    box-shadow:0 0 15px rgba(255,255,255,.8);
+}
+
+button{
+    width:55px;
+    border:none;
+    border-radius:12px;
+    background:#6c63ff;
+    color:white;
+    cursor:pointer;
+    transition:.4s;
+    font-size:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+button:hover{
+    background:#4834d4;
+    transform:rotate(10deg) scale(1.1);
+    box-shadow:0 8px 20px rgba(108,99,255,.5);
+}
+
+button:active{
+    transform:scale(.9);
+}
+
+/* Weather Result */
+.weather-result{
+    color:white;
+    font-size:18px;
+    line-height:1.8;
+    opacity:0;
+    animation:fadeIn 1s forwards;
+}
+
+.weather-result h3{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.weather-result p{
+    background:rgba(255,255,255,.15);
+    margin:10px 0;
+    padding:10px;
+    border-radius:12px;
+    transition:.4s;
+}
+
+.weather-result p:hover{
+    transform:translateX(8px);
+    background:rgba(255,255,255,.3);
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Decorative Floating Circles */
+body::before,
+body::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+    animation:move 12s linear infinite;
+}
+
+body::before{
+    width:180px;
+    height:180px;
+    top:10%;
+    left:10%;
+}
+
+body::after{
+    width:250px;
+    height:250px;
+    bottom:10%;
+    right:10%;
+    animation-delay:3s;
+}
+
+@keyframes move{
+    0%{
+        transform:translateY(0) rotate(0deg);
+    }
+    50%{
+        transform:translateY(-40px) rotate(180deg);
+    }
+    100%{
+        transform:translateY(0) rotate(360deg);
+    }
 }
