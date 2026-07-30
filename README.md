@@ -1,49 +1,101 @@
-🌐 My Website
+# 🌦️ Weather App
 
-This project is a simple and responsive website built using HTML, CSS, and JavaScript.
-It showcases a clean design and provides an easy-to-navigate user interface.
+A responsive weather application built using **HTML, CSS, and JavaScript** that allows users to check real-time weather information for any city. The application fetches live weather data through a weather API and displays essential weather details in a clean, user-friendly interface.
 
-💻 Features
+---
 
-Responsive layout for all screen sizes
+## 📌 Features
 
-Clean and modern design
+- 🌍 Search weather by city name
+- 🌡️ Displays current temperature
+- ☁️ Shows weather condition and description
+- 💧 Displays humidity level
+- 💨 Displays wind speed
+- 📱 Fully responsive design for desktop and mobile
+- ⚡ Fast and simple user interface
+- ❌ Error handling for invalid city names
 
-Easy to customize and update
+---
 
-Organized folder structure
+## 🛠️ Technologies Used
 
-🛠️ Technologies Used
+- **HTML5** – Structure
+- **CSS3** – Styling and Responsive Design
+- **JavaScript (ES6)** – API integration and functionality
+- **OpenWeatherMap API** (or your weather API) – Live weather data
 
-HTML5 – for structure
+---
 
-CSS3 – for styling
+## 📂 Project Structure
 
-JavaScript – for interactivity
-
-🚀 How to View
-
-You can view the live site here:
-👉 https://Shreya492004.github.io/weather-app
-
-
-
-📂 Folder Structure
-/my-website
+```
+weather-app/
 │
 ├── index.html
 ├── style.css
 ├── script.js
-└── /images
+├── images/
+└── README.md
+```
 
-💬 About
+---
 
-This website was developed as part of my learning journey in frontend web development.
-I created it to improve my skills and understand the basics of responsive design and layout.
+## 🚀 Live Demo
 
-📧 Contact
+👉 https://Shreya492004.github.io/weather-app/
 
-If you’d like to connect or share feedback:
-Name: Shreya
-Email: sshreyas471@gmail.com
-LinkedIn:linkdin.com/in/shreya004
+---
+
+## ⚙️ How to Run Locally
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/Shreya492004/weather-app.git
+```
+
+2. Open the project folder.
+
+3. Open `index.html` in your browser.
+
+---
+
+## 📸 Screenshot
+
+Add a screenshot of your application here.
+
+Example:
+
+```
+images/screenshot.png
+```
+
+---
+
+## 🎯 Learning Outcomes
+
+This project helped me learn:
+
+- Working with REST APIs
+- Fetching data using JavaScript
+- JSON data handling
+- DOM manipulation
+- Responsive web design
+- Error handling in JavaScript
+- Creating interactive web applications
+
+---
+
+## 👩‍💻 Author
+
+**Shreya**
+
+- GitHub: https://github.com/Shreya492004
+- LinkedIn: https://linkedin.com/in/shreya004
+- Email: sshreyas471@gmail.com
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
